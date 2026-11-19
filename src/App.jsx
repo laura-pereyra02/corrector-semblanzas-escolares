@@ -150,7 +150,6 @@ async function downloadResult() {
   URL.revokeObjectURL(url);
 }
 
-
   async function startCorrection() {
     if (!original.trim()) {
       setNotice("Pegá o escribí una semblanza para comenzar.");
@@ -169,7 +168,7 @@ async function downloadResult() {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/semblanzas/corregir",
+        "https://corrector-semblanzas-backend.onrender.com/api/semblanzas/corregir",
         {
           method: "POST",
           headers: {
@@ -222,7 +221,7 @@ async function downloadResult() {
     formulario.append("archivo", archivoWord);
 
     const response = await fetch(
-      "http://localhost:8080/api/semblanzas/corregir-word",
+      "https://corrector-semblanzas-backend.onrender.com/api/semblanzas/corregir-word",
       {
         method: "POST",
         body: formulario,
